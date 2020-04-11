@@ -66,3 +66,33 @@ db.collection("cloudcafe")
       }
     });
   });
+
+//updating the data --- this part is not included in UI
+
+//===============================================================
+//part 1. update with update() function
+// update allows you to update the one or two property
+// without affecting reset of document
+
+/**  db.collection('cloudcafe')
+    .doc('GH4t99wW86m3Csj8UDNb')
+    .update({
+        name:'New Cafe name'
+        city:'New City'
+    })
+*/
+
+//===============================================================
+//part 2. update with set() function
+// overrides completely the whole document regardless which
+// properties you want to update
+
+/**  db.collection('cloudcafe')
+    .doc('GH4t99wW86m3Csj8UDNb')
+    .set({
+        name:'New Cafe name'
+    })
+*/
+// db.collection('cloudcafe').doc('GH4t99wW86m3Csj8UDNb').set({name:'New Cafe',city:'new city'})
+// Note: city will be blanked if not included
+//===============================================================
